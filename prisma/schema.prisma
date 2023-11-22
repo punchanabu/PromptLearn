@@ -1,0 +1,45 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  username  String    @unique
+  email     String    @unique
+  password  String
+  courses   Course[]
+  createdAt DateTime  @default(now())
+}
+
+model Course {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String
+  lessons     Lesson[]
+  quizzes     Quiz[]
+  createdBy   String
+  createdAt   DateTime  @default(now())
+  owner       User      @relation(fields: [ownerId], references: [id])
+  ownerId     String
+}
+
+model Lesson {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  content     String
+  courseId    String
+  course      Course    @relation(fields: [courseId], references: [id])
+}
+
+model Quiz {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  questions   Json      // Store questions as a JSON object
+  courseId    String
+  course      Course    @relation(fields: [courseId], references: [id])
+}
