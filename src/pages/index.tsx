@@ -12,8 +12,8 @@ export default function HomePage() {
         {/* Main Content Section */}
         <main className="flex flex-col items-center justify-center mt-16">
           {/* Welcome Message */}
-          <h1 className="text-4xl font-mono font-semibold mb-6 ">Welcome to the CourseGen</h1>
-          <p className="max-w-prose text-lg text-center mb-8 font-mono">Create custom courses and lessons with the power of ChatGPT.</p>
+          <h1 className="text-4xl  font-semibold mb-6 ">Welcome to the CourseGen</h1>
+          <p className="max-w-prose text-lg text-center mb-8 ">Create custom courses and lessons with the power of ChatGPT.</p>
 
           {/* Call to Action Button */}
           <a href="/courses/create" className="bg-blue-500  hover:bg-blue-600 text-white font-semibold py-4 px-8 rounded-xl transition duration-300 ease-in-out transform hover:scale-105">
@@ -22,7 +22,7 @@ export default function HomePage() {
         </main>
 
         {/* Feature Section */}
-        <section className="mt-16 grid grid-cols-1 space-x-2 gap-4 text-center lg:max-w-5xl lg:w-full lg:grid-cols-3 lg:text-left font-mono">
+        <section className="mt-16 grid grid-cols-1 space-x-2 gap-4 text-center lg:max-w-5xl lg:w-full lg:grid-cols-3 lg:text-left ">
           {/* Feature Cards */}
           <div className="feature-card space-y-2">
             <h2 className='text-xl font-bold'>User Input for Learning Goals</h2>

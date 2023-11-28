@@ -13,7 +13,7 @@ const LoginComponent: React.FC = () => {
         }
 
         try {
-            const response = await fetch('/api/auth/login', { // Adjust the endpoint as necessary
+            const response = await fetch('/api/auth/login', { 
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -24,7 +24,6 @@ const LoginComponent: React.FC = () => {
             const data = await response.json();
 
             if (response.ok) {
-                console.log("Login successful:", data);
                 alert("Login successful!");
                 // store token in localStorage
                 localStorage.setItem('usertoken', data.token);

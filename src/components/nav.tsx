@@ -14,8 +14,12 @@ const Nav: React.FC = () => {
             }
         }
     }, []);
+    const logOut = () => {
+        localStorage.removeItem('usertoken');
+        setIsLogged(false);
+    };
     return (
-        <header className="flex w-full max-w-5xl items-center justify-between">
+        <header className="flex w-full max-w-5xl items-center justify-between bg-white">
             {/* Navigation Bar */}
             <nav>
                 <ul className="flex space-x-4 font-mono">
@@ -42,16 +46,10 @@ const Nav: React.FC = () => {
             {isLogged ? (
                 <div className="flex items-center space-x-4 font-mono">
                     <div className='relative group'>
-                        <Link href="/profile" className="py-2 px-4 inline-block text-gray-800 hover:text-blue-600 transition duration-300">
-                            Profile
-                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
-                        </Link>
-                    </div>
-                    <div className='relative group'>
-                        <Link href="/logout" className="py-2 px-4 inline-block text-gray-800 hover:text-blue-600 transition duration-300">
+                        <button onClick={logOut} className="py-2 px-4 inline-block text-gray-800 hover:text-blue-600 transition duration-300">
                             Logout
                             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
-                        </Link>
+                        </button>
                     </div>
                 </div>
             ) : (
