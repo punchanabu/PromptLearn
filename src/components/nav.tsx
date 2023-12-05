@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-const Nav: React.FC = () => {
+const NavBar: React.FC = () => {
     const [isLogged, setIsLogged] = useState(false);  
     useEffect(() => {
     
@@ -58,4 +58,4 @@ const Nav: React.FC = () => {
     );
 };
 
-export default Nav;
+export default NavBar;
