@@ -54,9 +54,6 @@ PromptLearn is an innovative web application designed to generate and organize e
 - **Browsing Courses**: Explore available courses and lessons on the dashboard.
 - **User Registration and Login**: Sign up for a personalized experience and manage your courses.
 
-## Contributing
-Contributions to PromptLearn are welcome! Please read our contributing guidelines for details on how to contribute.
-
 ## License
 This project is licensed under the [MIT License](LICENSE).
 
