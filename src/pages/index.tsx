@@ -13,8 +13,8 @@
           {/* Main Content Section */}
           <main className="flex flex-col items-center justify-center mt-16">
             {/* Welcome Message */}
-            <h1 className="text-4xl  font-semibold mb-6 text-white">Welcome to the CourseGen</h1>
-            <p className="max-w-prose text-lg text-center mb-8 text-white">Create custom courses and lessons with the power of ChatGPT.</p>
+            <h1 className="text-4xl  font-semibold mb-6 text-white">Welcome to the PromptLearn</h1>
+            <p className="max-w-prose text-lg text-center mb-8 text-white">Create custom courses and lessons with the power of AI.</p>
 
             {/* Call to Action Button */}
             <Link href="/courses/create" className="bg-blue-500 text-xl hover:bg-blue-600 text-white font-semibold py-4 px-8 rounded-xl transition duration-300 ease-in-out transform hover:scale-105">
@@ -30,7 +30,7 @@
                 <h2 className='text-xl font-bold'>User Input for Learning Goals</h2>
               </div>
               <p>
-                Users can start by typing in what they want to learn. The system could ask follow-up questions to understand their current knowledge level and specific interests within the topic.
+                Users can start by typing in what they want to learn. The system could generate a course outline based on this input.
               </p>
             </div>
 
@@ -40,7 +40,7 @@
                 <h2 className='text-xl font-bold'>Generating a Customized Course Outline</h2>
               </div>
               <p>
-                Based on the input, ChatGPT can generate a course outline, including key topics, recommended reading materials, and a timeline.
+                Based on the input, AI can generate a course outline, including key topics, recommended reading materials, and a timeline.
               </p>
             </div>
 
