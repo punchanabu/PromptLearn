@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Layout from '@/components/Layout';
+import Layout from '../../../components/Layout';
 const CreateCourseComponent: React.FC = () => {
     const [courseName, setCourseName] = useState('');
 

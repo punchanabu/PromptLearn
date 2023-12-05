@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { IconType } from 'react-icons'; // Import react-icons
-import { FiBook, FiUser, FiCalendar } from 'react-icons/fi'; // Import specific icons
+import { FiBook, FiUser, FiCalendar } from 'react-icons/fi';
 
 interface CourseData {
   id: string;

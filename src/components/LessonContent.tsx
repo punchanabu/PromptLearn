@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'; 
-import Script from 'next/script';
-import createMarkUp from '@/helper/createMarkUp';
+import createMarkUp from '../helper/createMarkUp';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css'; 
 

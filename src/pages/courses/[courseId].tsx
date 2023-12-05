@@ -1,5 +1,5 @@
 import {useRouter} from 'next/router';
-import Layout from '@/components/Layout';
+import Layout from '../../components/Layout';
 import {useState, useEffect} from 'react';
 import LessonNavigation from '@/components/LessonNavigation';
 import LessonContent from '@/components/LessonContent';

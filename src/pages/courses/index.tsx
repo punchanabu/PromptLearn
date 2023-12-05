@@ -1,6 +1,6 @@
 import React from 'react'
-import Layout from '@/components/Layout'
-import CourseList from '@/components/CourseList'
+import Layout from '../../components/Layout'
+import CourseList from '../../components/CourseList'
 import { useEffect, useState } from 'react'
 import {useRouter} from 'next/router'
 const Dashboard = () => {

@@ -1,4 +1,4 @@
-import openai from "@/utils/openai";
+import openai from "../utils/openai";
 
 export default async function generateCourseByPrompt(course: string) {
     try {

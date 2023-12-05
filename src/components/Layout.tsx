@@ -1,4 +1,5 @@
-import Nav from '@/components/Nav';
+import Nav from '../components/Nav';
+
 import { ReactNode } from 'react';
 
 interface LayoutProps {

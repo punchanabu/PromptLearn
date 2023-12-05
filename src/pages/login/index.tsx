@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Layout from '@/components/Layout';
+import Layout from '../../components/Layout';
 const LoginComponent: React.FC = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
