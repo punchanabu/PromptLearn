@@ -1,5 +1,3 @@
----
-
 # PromptLearn
 
 ## Overview
@@ -66,4 +64,3 @@ This project is licensed under the [MIT License](LICENSE).
 - OpenAI for content generation APIs
 - Next.js, Prisma, and Tailwind CSS for the core technologies
 
----
