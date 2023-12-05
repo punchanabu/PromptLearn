@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Layout from '../../components/Layout';
+import Link from 'next/link';
 const LoginComponent: React.FC = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -74,6 +75,12 @@ const LoginComponent: React.FC = () => {
                         >
                             Login
                         </button>
+                    </div>
+                    <div className="mt-4 text-center flex justify-center items-center space-x-2">
+                            <p className='opacity-50 text-white'> Don't have an account yet? </p>
+                            <Link href="/register" className="text-blue-500 hover:text-blue-600 font-semibold">
+                                Register
+                            </Link>
                     </div>
                 </form>
             </div>
