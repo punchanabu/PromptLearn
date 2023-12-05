@@ -30,10 +30,10 @@ const Nav: React.FC = () => {
                         </Link>
                     </li>
                     <li className="relative group">
-                        <a href="/courses/create" className="nav-link py-2 px-4 inline-block text-white hover:text-blue-400 transition duration-300">
+                        <Link href="/courses/create" className="nav-link py-2 px-4 inline-block text-white hover:text-blue-400 transition duration-300">
                             Create
                             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </nav>

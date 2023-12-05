@@ -13,7 +13,7 @@ const LessonContent: React.FC<LessonContentProps> = ({currentNavigation}) => {
     const lessonId = currentNavigation;
     const [lessonContent, setLessonContent] = useState("");
     const [lessonTopic, setLessonTopic] = useState("");
-    console.log(lessonContent);
+    
     useEffect(() => { 
         const fetchLessonContent = async () => {
             try {
@@ -43,7 +43,7 @@ const LessonContent: React.FC<LessonContentProps> = ({currentNavigation}) => {
 
     useEffect(() => {
         hljs.highlightAll();
-    }, [lessonContent]);
+    }, [lessonContent,lessonId]);
 
     return (
         <>

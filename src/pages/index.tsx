@@ -1,6 +1,7 @@
   import Image from 'next/image';
   import { Inter } from 'next/font/google';
   import Layout from '@/components/Layout';
+  import Link from 'next/link';
   const inter = Inter({ subsets: ['latin'] });
 
   export default function HomePage() {
@@ -16,9 +17,9 @@
             <p className="max-w-prose text-lg text-center mb-8 text-white">Create custom courses and lessons with the power of ChatGPT.</p>
 
             {/* Call to Action Button */}
-            <a href="/courses/create" className="bg-blue-500 text-xl hover:bg-blue-600 text-white font-semibold py-4 px-8 rounded-xl transition duration-300 ease-in-out transform hover:scale-105">
+            <Link href="/courses/create" className="bg-blue-500 text-xl hover:bg-blue-600 text-white font-semibold py-4 px-8 rounded-xl transition duration-300 ease-in-out transform hover:scale-105">
               Get Started
-            </a>
+            </Link>
           </main>
 
           {/* Feature Section */}
