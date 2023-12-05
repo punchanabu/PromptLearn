@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'; 
-import Prism from 'prismjs';
 import Script from 'next/script';
 import createMarkUp from '@/helper/createMarkUp';
-import { loadPrismLanguage, supportedLanguages } from '@/helper/PrismLanguage';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/atom-one-dark.css'; 
+
+
 interface LessonContentProps {
     currentNavigation: string;
 }
@@ -40,22 +42,14 @@ const LessonContent: React.FC<LessonContentProps> = ({currentNavigation}) => {
     }, [currentNavigation]);
 
     useEffect(() => {
-        
-        supportedLanguages.forEach(async (language) => {
-            if (lessonTopic.toLowerCase().includes(language)) {
-                await loadPrismLanguage(language);
-            }
-        });
-            
-        Prism.highlightAll();
+        hljs.highlightAll();
     }, [lessonContent]);
 
     return (
         <>
-            <Script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/prism.js" strategy='beforeInteractive'/>
-            <main className='w-3/4 pt-8 border-2 rounded-md p-5 bg-white'>
-                <div className='text-2xl font-bold mb-2'>{lessonTopic}</div>
-                <div className='content' dangerouslySetInnerHTML={createMarkUp(lessonContent)}></div>
+            <main className="lesson-content bg-gray-800 text-white p-5 rounded-lg shadow-lg mx-4 my-8 w-full md:w-3/4">
+                <h1 className="text-3xl font-bold mb-4">{lessonTopic}</h1>
+                <article className="content overflow-auto" dangerouslySetInnerHTML={createMarkUp(lessonContent)} />
             </main>
         </>
     );

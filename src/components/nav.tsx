@@ -19,44 +19,38 @@ const Nav: React.FC = () => {
         setIsLogged(false);
     };
     return (
-        <header className="flex w-full max-w-5xl items-center justify-between">
+        <header className="flex w-full max-w-5xl items-center justify-between text-white">
             {/* Navigation Bar */}
             <nav>
                 <ul className="flex space-x-4 font-mono">
                     <li className="relative group">
-                        <Link href="/courses" className="nav-link py-2 px-4 inline-block text-gray-800 hover:text-blue-600 transition duration-300">
+                        <Link href="/courses" className="nav-link py-2 px-4 inline-block text-white hover:text-blue-400 transition duration-300">
                             Courses
-                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
                         </Link>
                     </li>
                     <li className="relative group">
-                        <a href="/courses/create" className="nav-link py-2 px-4 inline-block text-gray-800 hover:text-blue-600 transition duration-300">
+                        <a href="/courses/create" className="nav-link py-2 px-4 inline-block text-white hover:text-blue-400 transition duration-300">
                             Create
-                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
                         </a>
-                    </li>
-                    <li className="relative group">
-                        <Link href="/about" className="nav-link py-2 px-4 inline-block text-gray-800 hover:text-blue-600 transition duration-300">
-                            About
-                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
-                        </Link>
                     </li>
                 </ul>
             </nav>
             {isLogged ? (
                 <div className="flex items-center space-x-4 font-mono">
                     <div className='relative group'>
-                        <button onClick={logOut} className="py-2 px-4 inline-block text-gray-800 hover:text-blue-600 transition duration-300">
+                        <button onClick={logOut} className="py-2 px-4 inline-block text-white hover:text-blue-400 transition duration-300">
                             Logout
-                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
                         </button>
                     </div>
                 </div>
             ) : (
                 <div className="flex items-center space-x-4 relative group">
-                    <Link href="/register" className="py-2 px-4 inline-block text-gray-800 hover:text-blue-600 transition duration-300">
+                    <Link href="/register" className="py-2 px-4 inline-block text-white hover:text-blue-400 transition duration-300">
                         Sign Up
-                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
                     </Link>
                 </div>
             )}

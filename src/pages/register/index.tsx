@@ -53,12 +53,12 @@ const Register = () => {
     return (
         <Layout>
             <div className="flex justify-center items-center h-screen w-screen">
-                <div className="max-w-md w-full bg-white p-6">
-                    <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">Create Your Account</h2>
+                <div className="max-w-md w-full  p-6">
+                    <h2 className="text-2xl font-semibold text-center text-white mb-6">Create Your Account</h2>
                     <form onSubmit={handleSubmit}>
                         {/* Username Field */}
                         <div className="mb-4">
-                            <label htmlFor="username" className="block text-gray-700 font-bold mb-2">
+                            <label htmlFor="username" className="block text-white font-bold mb-2">
                                 Username
                             </label>
                             <input
@@ -66,13 +66,13 @@ const Register = () => {
                                 id="username"
                                 value={username}
                                 onChange={handleUsernameChange}
-                                className="w-full px-3 py-2 border rounded-lg text-gray-700 focus:ring-blue-500 focus:border-blue-500"
+                                className="w-full px-3 py-2 border rounded-md text-white bg-gray-800 focus:ring-blue-500 focus:border-blue-500"
                             />
                         </div>
 
                         {/* Email Field */}
                         <div className="mb-4">
-                            <label htmlFor="email" className="block text-gray-700 font-bold mb-2">
+                            <label htmlFor="email" className="block text-white font-bold mb-2">
                                 Email
                             </label>
                             <input
@@ -80,14 +80,14 @@ const Register = () => {
                                 id="email"
                                 value={email}
                                 onChange={handleEmailChange}
-                                className="w-full px-3 py-2 border rounded-lg text-gray-700 focus:ring-blue-500 focus:border-blue-500"
+                                className="w-full px-3 py-2 border rounded-md text-white bg-gray-800 focus:ring-blue-500 focus:border-blue-500"
                                 placeholder="you@example.com"
                             />
                         </div>
 
                         {/* Password Field */}
                         <div className="mb-6">
-                            <label htmlFor="password" className="block text-gray-700 font-bold mb-2">
+                            <label htmlFor="password" className="block text-white font-bold mb-2">
                                 Password
                             </label>
                             <input
@@ -95,7 +95,7 @@ const Register = () => {
                                 id="password"
                                 value={password}
                                 onChange={handlePasswordChange}
-                                className="w-full px-3 py-2 border rounded-lg text-gray-700 focus:ring-blue-500 focus:border-blue-500"
+                                className="w-full border px-3 py-2 rounded-md text-white bg-gray-800 focus:ring-blue-500 focus:border-blue-500"
                             />
                         </div>
 
@@ -110,7 +110,7 @@ const Register = () => {
 
                         {/* Already have an account? */}
                         <div className="mt-4 text-center flex justify-center items-center space-x-2">
-                            <p className='opacity-50'> Already have an account? </p>
+                            <p className='opacity-50 text-white'> Already have an account? </p>
                             <Link href="/login" className="text-blue-500 hover:text-blue-600 font-semibold">
                                 Login
                             </Link>

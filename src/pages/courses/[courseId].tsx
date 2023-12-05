@@ -50,10 +50,9 @@ const Lesson = () => {
         <Layout>
             {/* <h1 className=''>courseId: {courseId }</h1>
             <h1 className=''>currentNavigation: {currentNavigation}</h1> */}
-            <div className='flex space-x-5 w-full max-w-5xl'>
-                <LessonNavigation navigationData = {navigationData} setCurrentNavigation = {setCurrentNavigation}/>
-                
-                <LessonContent currentNavigation = {currentNavigation} />
+            <div className='flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-5 w-full max-w-5xl'>
+                <LessonNavigation navigationData={navigationData} setCurrentNavigation={setCurrentNavigation}/>
+                <LessonContent currentNavigation={currentNavigation} />
             </div>
         </Layout>
     );

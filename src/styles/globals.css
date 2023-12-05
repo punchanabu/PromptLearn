@@ -8,40 +8,42 @@
 }
 
 
-    /* Headings */
 
+.lesson-content {
+    max-width: 800px; /* Adjust based on preference */
+    margin: auto;
+    background-color: #1a1a1a; /* Slightly lighter than gray-800 for subtle contrast */
+    font-family: 'Roboto', sans-serif; /* Applying Roboto font here */
+}
+
+/* Headings */
+.content h2, .content h3, .content h4 {
+    margin-top: 2em; /* Increased top margin */
+    margin-bottom: 1em; /* Increased bottom margin */
+    color: #e2e8f0; /* Light blue for better visibility and contrast */
+}
 
 .content h2 {
-    font-size: 1.5em; /* 28px */
-    margin-top: 0.75em;
-    margin-bottom: 0.25em;
-    color: black;
-    font-weight: bold;
+    font-size: 2em;
+    border-bottom: 1px solid #4a5568; /* Subtle separator for clarity */
 }
 
 .content h3 {
-    font-size: 1.5em; /* 24px */
-    margin-bottom: 0.75em;
-    color: black;
-    font-weight: bold;
+    font-size: 1.75em;
 }
 
 .content h4 {
-    font-size: 1.25em; /* 20px */
-    margin-bottom: 0.75em;
-    color: #666;
-    font-weight: bold;
+    font-size: 1.5em;
 }
 
 /* Lists */
-.content ul, ol {
-    margin-bottom: 1em;
-    padding-left: 20px;
+.content ul, .content ol {
+    padding-left: 1.5em;
+    margin-bottom: 1em; /* Increased bottom margin for lists */
+    color: #cbd5e0; /* Lighter color for list text */
 }
 
 .content li {
-    margin-bottom: 0.5em;
-    font-size: 1em; /* 16px */
-    color: black;
+    margin-bottom: 2em; /* Increased bottom margin for list items */
+    font-size: 1.1em; /* Slightly larger for readability */
 }
-

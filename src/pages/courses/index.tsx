@@ -32,8 +32,6 @@ const dashboard = () => {
     return (
         <Layout>
             <div className='space-y-2 mt-10'>
-                <h1 className='text-4xl font-bold text-center'>Your Courses</h1>       
-                <h2 className='text-center'>This where your generated course are enjoy learning!</h2>
                 <CourseList courses={course}/>
             </div>
         </Layout>

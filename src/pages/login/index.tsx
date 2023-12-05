@@ -38,34 +38,32 @@ const LoginComponent: React.FC = () => {
     return (
         <Layout>
             <div className="flex justify-center items-center h-screen w-screen">
-                <form onSubmit={handleLogin} className="max-w-md w-full bg-white p-8">
-                    <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">Login</h2>
+                <form onSubmit={handleLogin} className="max-w-md w-full p-8">
+                    <h2 className="text-2xl font-semibold text-center text-white mb-6">Log in to your account</h2>
                     {/* email Field */}
                     <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+                        <label className="block text-white text-sm font-bold mb-2" htmlFor="email">
                             email
                         </label>
                         <input
-                            className="w-full px-3 py-2 border rounded-lg text-gray-700 focus:ring-blue-500 focus:border-blue-500"
+                            className="w-full px-3 py-2 border rounded-lg text-gray-800 focus:ring-blue-500 focus:border-blue-500"
                             id="email"
                             type="text"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            placeholder="email"
                         />
                     </div>
                     {/* Password Field */}
                     <div className="mb-6">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+                        <label className="block text-white text-sm font-bold mb-2" htmlFor="password">
                             Password
                         </label>
                         <input
-                            className="w-full px-3 py-2 border rounded-lg text-gray-700 focus:ring-blue-500 focus:border-blue-500"
+                            className="w-full px-3 py-2 border rounded-lg text-gray-800 focus:ring-blue-500 focus:border-blue-500"
                             id="password"
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            placeholder="Password"
                         />
                     </div>
                     {/* Login Button */}
