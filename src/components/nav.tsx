@@ -19,7 +19,7 @@ const Nav: React.FC = () => {
         setIsLogged(false);
     };
     return (
-        <header className="flex w-full max-w-5xl items-center justify-between bg-white">
+        <header className="flex w-full max-w-5xl items-center justify-between">
             {/* Navigation Bar */}
             <nav>
                 <ul className="flex space-x-4 font-mono">

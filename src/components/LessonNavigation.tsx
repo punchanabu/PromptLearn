@@ -20,7 +20,7 @@ const LessonNavigation: React.FC<LessonNavigationProps> = ({ navigationData, set
         {navigationData.map((navigation) => (
           <button
             key={navigation.lessonId}
-            className='bg-white hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded block w-full'
+            className='bg-white hover:bg-gray-300 text-gray-800 py-2 px-4 rounded block w-full'
             onClick={() => setCurrentNavigation(navigation.lessonId)}
           >
             {navigation.topic}

@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] });
 export default function HomePage() {
   return (
     <Layout>
-      <div className={`flex flex-col min-h-screen justify-between p-16 bg-white text-gray-800 ${inter.className}`}>
+      <div className={`flex flex-col min-h-screen justify-between p-16  text-gray-800 ${inter.className}`}>
 
 
         {/* Main Content Section */}
@@ -24,19 +24,19 @@ export default function HomePage() {
         {/* Feature Section */}
         <section className="mt-16 grid grid-cols-1 space-x-2 gap-4 text-center lg:max-w-5xl lg:w-full lg:grid-cols-3 lg:text-left ">
           {/* Feature Cards */}
-          <div className="feature-card space-y-2">
+          <div className="feature-card space-y-2 shadow-md p-10 rounded-xl">
             <h2 className='text-xl font-bold'>User Input for Learning Goals</h2>
             <p>
               Users can start by typing in what they want to learn. The system could ask follow-up questions to understand their current knowledge level and specific interests within the topic.
             </p>
           </div>
-          <div className="feature-card space-y-2">
+          <div className="feature-card space-y-2 shadow-md p-10 rounded-xl">
             <h2 className='text-xl font-bold'>Generating a Customized Course Outline</h2>
             <p>
               Based on the input, ChatGPT can generate a course outline, including key topics, recommended reading materials, and a timeline.
             </p>
           </div>
-          <div className="feature-card space-y-2">
+          <div className="feature-card space-y-2 shadow-md p-10 rounded-xl">
             <h2 className='text-xl font-bold'>Creating Assignments and Projects</h2>
             <p>
               For each topic, the system can create assignments or projects. These could range from writing essays to practical coding tasks, depending on the subject.

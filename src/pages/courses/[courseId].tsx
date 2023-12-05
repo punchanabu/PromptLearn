@@ -48,8 +48,8 @@ const Lesson = () => {
     });
     return (
         <Layout>
-            <h1 className=''>courseId: {courseId }</h1>
-            <h1 className=''>currentNavigation: {currentNavigation}</h1>
+            {/* <h1 className=''>courseId: {courseId }</h1>
+            <h1 className=''>currentNavigation: {currentNavigation}</h1> */}
             <div className='flex space-x-5 w-full max-w-5xl'>
                 <LessonNavigation navigationData = {navigationData} setCurrentNavigation = {setCurrentNavigation}/>
                 
