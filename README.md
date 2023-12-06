@@ -15,7 +15,7 @@ PromptLearn is an innovative web application designed to generate and organize e
 ### Prerequisites
 - Node.js
 - npm or yarn
-- A running instance of PostgreSQL (for Prisma)
+- A running instance of MongoDB (for Prisma)
 
 ### Installation
 1. Clone the repository:
