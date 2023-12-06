@@ -58,7 +58,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             }
         });
 
-        courseData.topicsCovered.forEach(async (topic) => {
+        courseData.topicsCovered.forEach(async (topic: string) => {
             try {
                 const lessonResponse = await generateLessonByPrompt(topic); 
                 const lessonContent = lessonResponse.message.content;
