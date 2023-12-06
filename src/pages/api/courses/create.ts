@@ -40,14 +40,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             return res.status(400).json({ message: 'Course name is required' });
         }
 
-        const course = await generateCourseByPrompt(courseName);
-        const courseData = course.message.content ? JSON.parse(course.message.content) : null;
-        
+        const courseResponse = await generateCourseByPrompt(courseName);
+        const courseData = courseResponse.message.content ? JSON.parse(courseResponse.message.content) : null;
         if (!courseData) {
             return res.status(400).json({ message: 'Invalid course data' });
         }
 
-        // Create Course
         const createdCourse = await prisma.course.create({
             data: {
                 title: courseData.courseTitle,
@@ -60,35 +58,26 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             }
         });
 
-        // Generate and create lessons asynchronously
-        const lessonPromises = courseData.topicsCovered.map(async (topic: string) => {
-            const lessonContent = await generateLessonByPrompt(topic); 
-            if (lessonContent.message.content) {
-                return prisma.lesson.create({
-                    data: {
-                        title: topic,
-                        content: lessonContent.message.content,
-                        courseId: createdCourse.id
-                    }
-                });
+        courseData.topicsCovered.forEach(async (topic) => {
+            try {
+                const lessonResponse = await generateLessonByPrompt(topic); 
+                const lessonContent = lessonResponse.message.content;
+                if (lessonContent) {
+                    await prisma.lesson.create({
+                        data: {
+                            title: topic,
+                            content: lessonContent,
+                            courseId: createdCourse.id
+                        }
+                    });
+                }
+            } catch (lessonError) {
+                console.error(`Error creating lesson for topic ${topic}:`, lessonError);
+                // Consider adding error handling logic here, such as retrying the request
             }
         });
 
-        // Wait for all lessons to be created
-        const createdLessons = await Promise.all(lessonPromises);
-
-        // Filter out null responses
-        const createdLessonIds = createdLessons.filter(Boolean).map(lesson => ({ id: lesson.id }));
-
-        // Update course with lessons (if any)
-        if (createdLessonIds.length > 0) {
-            await prisma.course.update({
-                where: { id: createdCourse.id },
-                data: { lessons: { connect: createdLessonIds } }
-            });
-        }
-
-        return res.status(200).json({ message: 'Course created successfully' });
+        return res.status(200).json({ message: 'Course creation process initiated' });
     } catch (error) {
         console.error('Error in creating course:', error);
         return res.status(500).json({ message: 'Something went wrong' });
