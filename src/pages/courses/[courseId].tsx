@@ -42,7 +42,12 @@ const Lesson = () => {
                 },
             });
             const data = await response.json();
-            setNavigationData(data);
+            const sortedData = [...data].sort((a, b) => {
+                let numA = parseInt(a.topic.split('.')[0], 10);
+                let numB = parseInt(b.topic.split('.')[0], 10);
+                return numA - numB;
+            });
+            setNavigationData(sortedData);
         }
         getNavigationData();
     });

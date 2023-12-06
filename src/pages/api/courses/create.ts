@@ -3,9 +3,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import jwt from 'jsonwebtoken';
 import generateCourseByPrompt from '@/helper/generateCourseByPrompt';
 import generateLessonByPrompt from '@/helper/generateLessonByPrompt';
-import { create } from 'domain';
 
-type userData = {
+type UserData = {
     userId: string;
     email: string;
     iat: number;
@@ -29,7 +28,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     let userId;
     try {
-        const decoded = jwt.verify(token, JWT_SECRET) as userData;
+        const decoded = jwt.verify(token, JWT_SECRET) as UserData;
         userId = decoded.userId;
     } catch (error) {
         return res.status(401).json({ message: 'Invalid token' });
@@ -42,7 +41,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         }
 
         const course = await generateCourseByPrompt(courseName);
-
         const courseData = course.message.content ? JSON.parse(course.message.content) : null;
         
         if (!courseData) {
@@ -58,44 +56,38 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 owner: {
                     connect: { id: userId }
                 },
-                lessons: {
-                    create: []
-                }
+                lessons: { create: [] }
             }
         });
-        let createLessonId = [];
-        // Create Lessons
-        for (const topic of courseData.topicsCovered) {
+
+        // Generate and create lessons asynchronously
+        const lessonPromises = courseData.topicsCovered.map(async (topic) => {
             const lessonContent = await generateLessonByPrompt(topic); 
-            const createdLesson = lessonContent.message.content;
-            if (!createdLesson) {
-                return res.status(400).json({ message: 'Invalid lesson data' });
-            }
-            const newLesson = await prisma.lesson.create({
-                data: {
-                    title: topic,
-                    content: createdLesson,
-                    courseId: createdCourse.id
-                }
-            });
-            createLessonId.push({id: newLesson.id});
-        }
-        
-        // update course to be the array of lesson
-        const update = await prisma.course.update({
-            where: {
-                id: createdCourse.id
-            },
-            data: {
-                lessons: {
-                    connect: createLessonId
-                }
+            if (lessonContent.message.content) {
+                return prisma.lesson.create({
+                    data: {
+                        title: topic,
+                        content: lessonContent.message.content,
+                        courseId: createdCourse.id
+                    }
+                });
             }
         });
-        if (update) {
-            console.log('Update Course Lesson successfully');
-            return res.status(200).json({ message: 'Update Course Lesson successfully' });
+
+        // Wait for all lessons to be created
+        const createdLessons = await Promise.all(lessonPromises);
+
+        // Filter out null responses
+        const createdLessonIds = createdLessons.filter(Boolean).map(lesson => ({ id: lesson.id }));
+
+        // Update course with lessons (if any)
+        if (createdLessonIds.length > 0) {
+            await prisma.course.update({
+                where: { id: createdCourse.id },
+                data: { lessons: { connect: createdLessonIds } }
+            });
         }
+
         return res.status(200).json({ message: 'Course created successfully' });
     } catch (error) {
         console.error('Error in creating course:', error);
