@@ -61,7 +61,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         });
 
         // Generate and create lessons asynchronously
-        const lessonPromises = courseData.topicsCovered.map(async (topic) => {
+        const lessonPromises = courseData.topicsCovered.map(async (topic: string) => {
             const lessonContent = await generateLessonByPrompt(topic); 
             if (lessonContent.message.content) {
                 return prisma.lesson.create({
