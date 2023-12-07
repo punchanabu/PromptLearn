@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from '../../../components/Layout';
 const CreateCourseComponent: React.FC = () => {
     const [courseName, setCourseName] = useState('');
@@ -33,7 +33,12 @@ const CreateCourseComponent: React.FC = () => {
         }
         
     };
-
+    useEffect(() => {
+        const token = localStorage.getItem('usertoken');
+        if (!token) {
+            window.location.href = '/login';
+        }
+    });
     return (
         <Layout>
             <div className="flex justify-center items-center h-screen px-4 sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4"> {/* Added padding for smaller screens */}

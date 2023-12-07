@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import Layout from '../../components/Layout';
 import Link from 'next/link';
+import Spinner from '@/components/Spinner';
+import Router from 'next/router';
 const LoginComponent: React.FC = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+    const [login,setLogin] = useState(0);
+    if (login == 2)  {
+        Router.push('courses/create');
+    }
     const handleLogin = async (event: React.FormEvent) => {
         event.preventDefault();
-
+        setLogin(1);
         if (!email.trim() || !password.trim()) {
             alert("Please enter both email and password.");
             return;
@@ -25,7 +30,7 @@ const LoginComponent: React.FC = () => {
             const data = await response.json();
 
             if (response.ok) {
-                alert("Login successful!");
+                setLogin(2);
                 // store token in localStorage
                 localStorage.setItem('usertoken', data.token);
             } else {
@@ -70,10 +75,12 @@ const LoginComponent: React.FC = () => {
                     {/* Login Button */}
                     <div className="flex items-center justify-center">
                         <button
-                            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                            className="w-full flex justify-center items-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
                             type="submit"
                         >
-                            Login
+                            {
+                                login === 0 ? 'Login' : login === 1 ? <Spinner /> : 'Logged in successfully'
+                            }
                         </button>
                     </div>
                     <div className="mt-4 text-center flex justify-center items-center space-x-2">

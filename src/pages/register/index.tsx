@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Layout from '../../components/Layout';
+import Spinner from '@/components/Spinner';
 const Register = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+    const [registered, setRegistered] = useState(0); // 0 = not register 1 = registering 2 = registered 
     const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setUsername(event.target.value);
     };
@@ -23,31 +24,22 @@ const Register = () => {
         event.preventDefault();
 
         console.log("Submitting form!", username, email, password);
-
+        setRegistered(1);
         if (!username.trim() || !email.trim() || !password.trim()) {
             alert("Please enter username, email, and password.");
             return;
         }
 
-        try {
-            const response = await fetch('/api/auth/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ username, email, password }),
-            });
-            const responseJson = await response.json();
-
-            if (!responseJson.ok) {
-                console.log("There was an error while registering!", responseJson);
-                throw new Error(responseJson.message);
-            }
-
-            alert("Registration successful!"); // Placeholder for actual registration action
-        } catch (error) {
-            console.log("There was an error while registering!", error);
-        }
+        const response = await fetch('/api/auth/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username, email, password }),
+        });
+        
+        
+        setRegistered(2);
     };
 
     return (
@@ -102,12 +94,28 @@ const Register = () => {
                         {/* Submit Button */}
                         <button
                             type="submit"
-                            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                            className="w-full flex justify-center items-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
 
                         >
-                            Register
+                        {
+                            registered == 0 && (
+                                <span>Register</span>
+                            )
+                        }    
+                        {
+                            registered == 1 && (
+                                <div className="text-white text-center">
+                                    <Spinner />
+                                </div>
+                            )
+                        }
+                        {registered == 2 && (
+                            <p className= "text-white text-center">
+                                You have successfully registered!
+                            </p>
+                        )}
                         </button>
-
+                        
                         {/* Already have an account? */}
                         <div className="mt-4 text-center flex justify-center items-center space-x-2">
                             <p className='opacity-50 text-white'> Already have an account? </p>
