@@ -29,7 +29,7 @@ const Lesson = () => {
     const {courseId} = router.query;
     const [currentNavigation, setCurrentNavigation] = useState("");
     const [navigationData, setNavigationData] = useState<NavigationData[]>([]);
-
+    const [loading, setLoading] = useState(true); 
     // fetch the navigation data from the database from courseId
     useEffect(() => {
         const getNavigationData = async () => {
@@ -56,8 +56,8 @@ const Lesson = () => {
             {/* <h1 className=''>courseId: {courseId }</h1>
             <h1 className=''>currentNavigation: {currentNavigation}</h1> */}
             <div className='flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-5 w-full max-w-5xl'>
-                <LessonNavigation navigationData={navigationData} setCurrentNavigation={setCurrentNavigation}/>
-                <LessonContent currentNavigation={currentNavigation} />
+                <LessonNavigation navigationData={navigationData} setCurrentNavigation={setCurrentNavigation} setLoading = {setLoading} />
+                <LessonContent currentNavigation={currentNavigation} setLoading = {setLoading} loading = {loading} />
             </div>
         </Layout>
     );

@@ -25,7 +25,7 @@
             <p className="max-w-prose text-lg text-center mb-8 text-white">Create custom courses and lessons with the power of AI.</p>
 
             {/* Call to Action Button */}
-            <Link href="/courses/create" className="bg-blue-500 text-xl hover:bg-blue-600 text-white font-semibold py-4 px-8 rounded-xl transition duration-300 ease-in-out transform hover:scale-105">
+            <Link href="/courses/create" className="bg-blue-500 text-xl hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-xl transition duration-300 ease-in-out transform hover:scale-105">
               Get Started
             </Link>
           </main>

@@ -3,9 +3,11 @@ import Layout from '../../components/Layout'
 import CourseList from '../../components/CourseList'
 import { useEffect, useState } from 'react'
 import {useRouter} from 'next/router'
+import Spinner from '@/components/Spinner'
 const Dashboard = () => {
 
     const [course, setCourse] = useState([]);
+    const [loading, setLoading] = useState(true);
     const router = useRouter();
     const getCourse = async () => {
         const token = localStorage.getItem('usertoken');
@@ -22,7 +24,7 @@ const Dashboard = () => {
             }
         });
         const courseJson = await course.json();
-        
+        setLoading(false);
         setCourse(courseJson);
     }
     useEffect( () => {
@@ -31,8 +33,13 @@ const Dashboard = () => {
 
     return (
         <Layout>
-            <div className='space-y-2 mt-10'>
-                <CourseList courses={course}/>
+            <div className='flex justify-center items-center w-full h-full'>
+                {loading == false ?
+                <div className='space-y-2 mt-10'>
+                    <CourseList courses={course}/>
+                </div>  
+                :  
+                <Spinner/>  }
             </div>
         </Layout>
     )
