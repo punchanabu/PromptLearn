@@ -1,5 +1,3 @@
----
-
 # 📖 PromptLearn | Create your own Lessons
 
 **PromptLearn** is a web-application that leverages the OpenAI API to create dynamic, personalized content for an engaging and tailored learning experience. 
