@@ -24,7 +24,70 @@ To start using PromptLearn, follow these simple steps:
 
 ## Contributing
 
-We welcome contributions to PromptLearn! If you have suggestions or want to improve the application, feel free to fork the repository and submit a pull request.
+We welcome contributions to PromptLearn! If you have suggestions or want to improve the application, here's how you can set up the project for development:
+
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (preferably the latest stable version)
+- [Git](https://git-scm.com/) for version control
+- A code editor of your choice (e.g., [VSCode](https://code.visualstudio.com/), [Sublime Text](https://www.sublimetext.com/))
+
+### Setting Up the Project
+
+1. **Fork and Clone the Repository**
+   - Fork the PromptLearn repository to your GitHub account.
+   - Clone your forked repository to your local machine:
+     ```bash
+     git clone https://github.com/your-username/PromptLearn.git
+     ```
+   - Navigate to the project directory:
+     ```bash
+     cd PromptLearn
+     ```
+
+2. **Install Dependencies**
+   - Install the necessary Node.js dependencies:
+     ```bash
+     npm install
+     ```
+
+3. **Set Up Environment Variables**
+   - Create a `.env.local` file in the root of the project.
+   - Add the required environment variables:
+     ```
+     OPENAI_API_KEY=your_openai_api_key
+     JWT_SECRET = your_jwt_key
+     DATABASE_URL = your_mongodb_database_url
+     ```
+
+4. **Run the Development Server**
+   - Start the development server:
+     ```bash
+     npm run dev
+     ```
+   - Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+
+### Making Changes
+
+- Create a new branch for your feature or fix:
+  ```bash
+  git checkout -b your-branch-name
+  ```
+- Make your changes in the code.
+- Test your changes to ensure everything works as expected.
+
+### Submitting a Pull Request
+
+- Push your changes to your fork:
+  ```bash
+  git push origin your-branch-name
+  ```
+- Go to the original PromptLearn repository on GitHub.
+- Submit a pull request from your branch to the main PromptLearn repository.
+- Provide a clear description of your changes and any relevant issue numbers.
+
+We appreciate your contributions and will review them as soon as possible!
 
 ## License
 
