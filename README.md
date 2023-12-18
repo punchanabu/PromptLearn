@@ -10,10 +10,10 @@
 - 📚 **Dynamic Course Content**: Utilizing the power of AI, PromptLearn dynamically generates course outlines and lesson content based on user input. This means every course is unique and specifically catered to individual learning needs.
   
 - 🌐 **Interactive Learning Interface**: The application features an intuitive and user-friendly interface. With a clean layout and easy navigation, learners can focus on what's important - learning.
-
+-----------------------------------------------------------------
 ![Home](assets/image.png)
 ![Create](assets/image2.png)
-
+-----------------------------------------------------------------
 
 ## Getting Started
 
