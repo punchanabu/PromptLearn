@@ -11,6 +11,8 @@
   
 - 🌐 **Interactive Learning Interface**: The application features an intuitive and user-friendly interface. With a clean layout and easy navigation, learners can focus on what's important - learning.
 
+![Home](assets/image.png)
+![Create](assets/image2.png)
 
 
 ## Getting Started
