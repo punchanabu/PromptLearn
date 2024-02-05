@@ -62,7 +62,7 @@ const CreateCourseComponent: React.FC = () => {
                 <div className='p-10 space-y-10 flex flex-col items-center justify-center shadow-md rounded-md h-full'>
                     <Image src={StarSvg} alt="Create your notes" width={50} height={50}/>
                     <h1 className='text-center text-5xl font-bold'>Start Creating!</h1>
-                    <p className='text-center text-xl'>Now let's start your learning Journey and create a New Courses!</p>
+                    <p className='text-center text-xl'>Now let&apos;s start your learning Journey and create a New Courses!</p>
                     <form className='space-y-10 flex items-center justify-center flex-col w-full'>
                         <input
                             type="text"
