@@ -52,7 +52,7 @@ const LoginComponent: React.FC = () => {
                             email
                         </label>
                         <input
-                            className="w-full px-3 py-2 border rounded-lg text-black bg-gray-800 focus:ring-blue-500 focus:border-blue-500"
+                            className="w-full px-3 py-2 border rounded-lg text-black  focus:ring-blue-500 focus:border-blue-500"
                             id="email"
                             type="text"
                             value={email}
@@ -65,7 +65,7 @@ const LoginComponent: React.FC = () => {
                             Password
                         </label>
                         <input
-                            className="w-full px-3 py-2 border rounded-lg text-black bg-gray-800 focus:ring-blue-500 focus:border-blue-500"
+                            className="w-full px-3 py-2 border rounded-lg text-black  focus:ring-blue-500 focus:border-blue-500"
                             id="password"
                             type="password"
                             value={password}
