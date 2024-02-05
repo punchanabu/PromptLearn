@@ -13,7 +13,7 @@
 .lesson-content {
     max-width: 800px; /* Adjust based on preference */
     margin: auto;
-    background-color: #1a1a1a; /* Slightly lighter than gray-800 for subtle contrast */
+    background-color: white; /* Slightly lighter than gray-800 for subtle contrast */
     font-family: 'Roboto', sans-serif; /* Applying Roboto font here */
 }
 
@@ -21,7 +21,7 @@
 .content h2, .content h3, .content h4 {
     margin-top: 2em; /* Increased top margin */
     margin-bottom: 1em; /* Increased bottom margin */
-    color: #e2e8f0; /* Light blue for better visibility and contrast */
+    color: black; /* Light blue for better visibility and contrast */
 }
 
 .content h2 {
@@ -41,7 +41,7 @@
 .content ul, .content ol {
     padding-left: 1.5em;
     margin-bottom: 1em; /* Increased bottom margin for lists */
-    color: #cbd5e0; /* Lighter color for list text */
+    color: black; /* Lighter color for list text */
 }
 
 .content li {

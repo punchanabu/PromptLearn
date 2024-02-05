@@ -1,7 +1,12 @@
+
 import React from "react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useRouter } from 'next/navigation'
+ 
+
 const Nav: React.FC = () => {
+    const router = useRouter();
   const [isLogged, setIsLogged] = useState(false);
   useEffect(() => {
     // This ensures that localStorage is accessed only on the client side
@@ -15,6 +20,9 @@ const Nav: React.FC = () => {
   const logOut = () => {
     localStorage.removeItem("usertoken");
     setIsLogged(false);
+    
+    router.push('/');
+    
   };
   return (
     <header className="flex w-full max-w-5xl items-center justify-between text-black mb-10 ">
@@ -25,19 +33,19 @@ const Nav: React.FC = () => {
         <li className="relative group">
           <Link
             href="/courses"
-            className="nav-link py-2 px-4 inline-block  hover:text-blue-400 transition duration-300"
+            className="nav-link py-2 px-4 inline-block   transition duration-300"
           >
             Courses
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
           </Link>
         </li>
         <li className="relative group">
           <Link
             href="/courses/create"
-            className="nav-link py-2 px-4 inline-block  hover:text-blue-400 transition duration-300"
+            className="nav-link py-2 px-4 inline-block   transition duration-300"
           >
             Create
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
           </Link>
         </li>
 
@@ -46,10 +54,10 @@ const Nav: React.FC = () => {
             <div className="relative group">
               <button
                 onClick={logOut}
-                className="py-2 px-4 inline-block  hover:text-blue-400 transition duration-300"
+                className="py-2 px-4 inline-block   transition duration-300"
               >
                 Logout
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
               </button>
             </div>
           </div>
