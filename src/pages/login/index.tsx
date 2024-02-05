@@ -75,7 +75,7 @@ const LoginComponent: React.FC = () => {
                     {/* Login Button */}
                     <div className="flex items-center justify-center">
                         <button
-                            className="w-full flex justify-center items-center bg-black hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                            className="w-full flex justify-center items-center bg-black hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
                             type="submit"
                         >
                             {
@@ -85,7 +85,7 @@ const LoginComponent: React.FC = () => {
                     </div>
                     <div className="mt-4 text-center flex justify-center items-center space-x-2">
                             <p className='opacity-50 text-black'> Don&apos;t have an account yet?</p>
-                            <Link href="/register" className="text-black hover:text-blue-600 font-semibold">
+                            <Link href="/register" className="text-black hover:text-gray-600 font-semibold">
                                 Register
                             </Link>
                     </div>
