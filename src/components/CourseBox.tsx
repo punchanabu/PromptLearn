@@ -1,7 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { FiBook, FiUser, FiCalendar } from 'react-icons/fi';
-
+import Image from 'next/image';
+import BookSvg from "../../public/assets/star.svg";
 interface CourseData {
   id: string;
   title: string;
@@ -16,16 +17,18 @@ const CourseBox = ({ course }: { course: CourseData }) => {
     year: "numeric",
     month: "long",
     day: "numeric",
-    hour: '2-digit',
-    minute: '2-digit',
   });
   return (
-    <Link href={`courses/${course.id}`} className="course-box rounded-lg p-4 shadow-md transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg cursor-pointer bg-gray-700 text-white flex flex-col justify-between">
-        <h3 className="text-lg font-bold mt-2 flex items-center"><FiBook className="mr-2 text-red-400" />{course.title}</h3>
-        <p className="text-white">{course.description}</p>
-        <div className="flex justify-between items-center text-sm text-white mt-4">
-          <span><FiUser /> {course.owner}</span>
-          <span><FiCalendar /> {nDate}</span>
+    <Link href={`courses/${course.id}`} className='space-y-5 flex items-center flex-col justify-center shadow-xl p-10 rounded-xl transition-transform duration-300 hover:translate-y-3'>
+        <div className="font-bold flex items-center space-x-5">
+          <div className='p-5 shadow-md rounded-full bg-gray-200'>
+            <Image src = {BookSvg} width={25} height={25} alt = "books"/>
+          </div>
+          <h2 className='text-2xl'>{course.title}</h2>
+        </div>
+        <p className="text-black">{course.description}</p>
+        <div>
+          <p>{nDate}</p>
         </div>
     </Link>
   );

@@ -45,14 +45,14 @@ const LoginComponent: React.FC = () => {
         <Layout>
             <div className="flex justify-center items-center h-screen w-screen">
                 <form onSubmit={handleLogin} className="max-w-md w-full p-8">
-                    <h2 className="text-2xl font-semibold text-center text-white mb-6">Log in to your account</h2>
+                    <h2 className="text-3xl font-semibold text-center text-black mb-6">Log in to your account</h2>
                     {/* email Field */}
                     <div className="mb-4">
-                        <label className="block text-white text-sm font-bold mb-2" htmlFor="email">
+                        <label className="block text-black text-sm font-bold mb-2" htmlFor="email">
                             email
                         </label>
                         <input
-                            className="w-full px-3 py-2 border rounded-lg text-white bg-gray-800 focus:ring-blue-500 focus:border-blue-500"
+                            className="w-full px-3 py-2 border rounded-lg text-black bg-gray-800 focus:ring-blue-500 focus:border-blue-500"
                             id="email"
                             type="text"
                             value={email}
@@ -61,11 +61,11 @@ const LoginComponent: React.FC = () => {
                     </div>
                     {/* Password Field */}
                     <div className="mb-6">
-                        <label className="block text-white text-sm font-bold mb-2" htmlFor="password">
+                        <label className="block text-black text-sm font-bold mb-2" htmlFor="password">
                             Password
                         </label>
                         <input
-                            className="w-full px-3 py-2 border rounded-lg text-white bg-gray-800 focus:ring-blue-500 focus:border-blue-500"
+                            className="w-full px-3 py-2 border rounded-lg text-black bg-gray-800 focus:ring-blue-500 focus:border-blue-500"
                             id="password"
                             type="password"
                             value={password}
@@ -75,7 +75,7 @@ const LoginComponent: React.FC = () => {
                     {/* Login Button */}
                     <div className="flex items-center justify-center">
                         <button
-                            className="w-full flex justify-center items-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                            className="w-full flex justify-center items-center bg-black hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
                             type="submit"
                         >
                             {
@@ -84,8 +84,8 @@ const LoginComponent: React.FC = () => {
                         </button>
                     </div>
                     <div className="mt-4 text-center flex justify-center items-center space-x-2">
-                            <p className='opacity-50 text-white'> Don&apos;t have an account yet?</p>
-                            <Link href="/register" className="text-blue-500 hover:text-blue-600 font-semibold">
+                            <p className='opacity-50 text-black'> Don&apos;t have an account yet?</p>
+                            <Link href="/register" className="text-black hover:text-blue-600 font-semibold">
                                 Register
                             </Link>
                     </div>

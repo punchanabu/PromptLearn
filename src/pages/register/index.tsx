@@ -45,12 +45,13 @@ const Register = () => {
     return (
         <Layout>
             <div className="flex justify-center items-center h-screen w-screen">
-                <div className="max-w-md w-full  p-6">
-                    <h2 className="text-2xl font-semibold text-center text-white mb-6">Create Your Account</h2>
+                <div className="max-w-md w-full p-6 space-y-5">
+                    <h2 className="text-3xl font-semibold text-center text-black mb-6">Create Your Account</h2>
+                    
                     <form onSubmit={handleSubmit}>
                         {/* Username Field */}
                         <div className="mb-4">
-                            <label htmlFor="username" className="block text-white font-bold mb-2">
+                            <label htmlFor="username" className="block text-black font-bold mb-2">
                                 Username
                             </label>
                             <input
@@ -58,13 +59,13 @@ const Register = () => {
                                 id="username"
                                 value={username}
                                 onChange={handleUsernameChange}
-                                className="w-full px-3 py-2 border rounded-md text-white bg-gray-800 focus:ring-blue-500 focus:border-blue-500"
+                                className="w-full px-3 py-2 border rounded-md text-black  focus:ring-blue-500 focus:border-blue-500"
                             />
                         </div>
 
                         {/* Email Field */}
                         <div className="mb-4">
-                            <label htmlFor="email" className="block text-white font-bold mb-2">
+                            <label htmlFor="email" className="block text-black font-bold mb-2">
                                 Email
                             </label>
                             <input
@@ -72,14 +73,14 @@ const Register = () => {
                                 id="email"
                                 value={email}
                                 onChange={handleEmailChange}
-                                className="w-full px-3 py-2 border rounded-md text-white bg-gray-800 focus:ring-blue-500 focus:border-blue-500"
+                                className="w-full px-3 py-2 border rounded-md text-black  focus:ring-blue-500 focus:border-blue-500"
                                 placeholder="you@example.com"
                             />
                         </div>
 
                         {/* Password Field */}
                         <div className="mb-6">
-                            <label htmlFor="password" className="block text-white font-bold mb-2">
+                            <label htmlFor="password" className="block text-black font-bold mb-2">
                                 Password
                             </label>
                             <input
@@ -87,14 +88,14 @@ const Register = () => {
                                 id="password"
                                 value={password}
                                 onChange={handlePasswordChange}
-                                className="w-full border px-3 py-2 rounded-md text-white bg-gray-800 focus:ring-blue-500 focus:border-blue-500"
+                                className="w-full border px-3 py-2 rounded-md text-black  focus:ring-blue-500 focus:border-blue-500"
                             />
                         </div>
 
                         {/* Submit Button */}
                         <button
                             type="submit"
-                            className="w-full flex justify-center items-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                            className="w-full flex justify-center items-center bg-black hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
 
                         >
                         {
@@ -104,13 +105,13 @@ const Register = () => {
                         }    
                         {
                             registered == 1 && (
-                                <div className="text-white text-center">
+                                <div className="text-black text-center">
                                     <Spinner />
                                 </div>
                             )
                         }
                         {registered == 2 && (
-                            <p className= "text-white text-center">
+                            <p className= "text-black text-center">
                                 You have successfully registered!
                             </p>
                         )}
@@ -118,8 +119,8 @@ const Register = () => {
                         
                         {/* Already have an account? */}
                         <div className="mt-4 text-center flex justify-center items-center space-x-2">
-                            <p className='opacity-50 text-white'> Already have an account? </p>
-                            <Link href="/login" className="text-blue-500 hover:text-blue-600 font-semibold">
+                            <p className='opacity-50 text-black'> Already have an account? </p>
+                            <Link href="/login" className="text-black hover:text-gray-600 font-semibold">
                                 Login
                             </Link>
                         </div>

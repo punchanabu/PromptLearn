@@ -33,6 +33,10 @@ const Dashboard = () => {
 
     return (
         <Layout>
+            <div className='flex flex-col space-y-5 items-center justify-center'>
+                <h1 className='text-5xl font-bold'>Explore your Course Now</h1>
+                <p>There is no limitation for learning any one can access to learning resources</p>
+            </div>
             <div className='flex justify-center items-center w-full h-full'>
                 {loading == false ?
                 <div className='space-y-2 mt-10'>

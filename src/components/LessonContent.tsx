@@ -51,7 +51,7 @@ const LessonContent: React.FC<LessonContentProps> = ({currentNavigation, loading
     }, [lessonContent,lessonId]);
 
     return (
-        <main className = {`lesson-content ${loading ? 'flex justify-center items-center' : ''} bg-gray-800 text-white p-5 rounded-lg shadow-lg mx-4 my-8 w-full md:w-3/4 `}>
+        <main className = {`lesson-content ${loading ? 'flex justify-center items-center' : ''} bg-white text-black p-5 rounded-lg shadow-lg mx-4 my-8 w-full md:w-3/4 `}>
             {loading ? <Spinner/> : 
                 <>
                     <h1 className="text-3xl font-bold mb-4">{lessonTopic}</h1>
