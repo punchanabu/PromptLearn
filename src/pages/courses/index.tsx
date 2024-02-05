@@ -43,7 +43,9 @@ const Dashboard = () => {
                     <CourseList courses={course}/>
                 </div>  
                 :  
-                <Spinner/>  }
+                <div className='w-screen h-[250px] flex justify-center items-center'>
+                    <Spinner/>
+                </div>  }
             </div>
         </Layout>
     )
