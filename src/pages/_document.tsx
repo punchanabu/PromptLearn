@@ -12,7 +12,7 @@ export default function Document() {
         />
 
       </Head>
-      <body className='bg-gray-800'>
+      <body>
         <Main />
         <NextScript />
       </body>

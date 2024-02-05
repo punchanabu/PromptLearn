@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '../../../components/Layout';
+import CreateSvg from "../../../../public/assets/create.svg";
+import UserSvg from "../../../../public/assets/user.svg";
+import StarSvg from "../../../../public/assets/star.svg";
+
+import Image from 'next/image';
 const CreateCourseComponent: React.FC = () => {
     const [courseName, setCourseName] = useState('');
 
@@ -41,34 +46,42 @@ const CreateCourseComponent: React.FC = () => {
     });
     return (
         <Layout>
-            <div className="flex justify-center items-center h-screen px-4 sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4"> {/* Added padding for smaller screens */}
-                <form onSubmit={handleSubmit} className="w-full "> {/* Responsive width */}
-                    <h2 className="text-xl sm:text-2xl font-semibold text-center text-white mb-6">Create Your Course</h2>
-                    {/* Course Name Field */}
-                    <div className="mb-6">
-                        <label className="block text-white text-md font-bold mb-2" htmlFor="courseName">
-                            What do you want to learn?
-                        </label>
+            <div className="flex flex-col md:grid md:grid-cols-2 p-10">
+                <div className='p-10 space-y-12 '>
+                    <div className='flex justify-center items-center flex-col shadow-md rounded-md p-10 max-w-xl space-y-2'>
+                        <Image src={CreateSvg} alt="Create your notes" width={90} height={90}/> 
+                        <h3 className='text-3xl font-bold mt-5 text-center'>Just Start typing what you want to learn!</h3>
+                        <p>Our AI will generated the notes and the topics required for you</p>
+                    </div>
+                    <div className='flex justify-center items-center flex-col shadow-md rounded-md p-10 max-w-xl space-y-2'>
+                        <Image src={UserSvg} alt="Create your notes" width={90} height={90}/> 
+                        <h3 className='text-3xl font-bold mt-5 text-center'>We will generated customized Course for you</h3>
+                        <p className='text-center'>Course will be specific by each user to ensure that you will get the personalized courses</p>
+                    </div>
+                </div>
+                <div className='p-10 space-y-10 flex flex-col items-center justify-center shadow-md rounded-md h-full'>
+                    <Image src={StarSvg} alt="Create your notes" width={90} height={90}/>
+                    <h1 className='text-center text-5xl font-bold'>Start Creating!</h1>
+                    <p className='text-center text-xl'>Now let's start your learning Journey and create a New Courses!</p>
+                    <form className='space-y-10 flex items-center justify-center flex-col w-full'>
                         <input
-                            className="w-full px-4 py-2 border rounded-lg text-white bg-gray-800 focus:ring-blue-500 focus:border-blue-500"
-                            id="courseName"
                             type="text"
+                            className="w-full p-3 border border-gray-300 rounded-md"
+                            placeholder="Course Name"
                             value={courseName}
                             onChange={handleCourseNameChange}
-                            placeholder="ex: Go programming language for beginners"
                         />
-                        <p className="mt-4 text-white text-sm text-center">
-                            Note: Generating a course may take 2-3 minutes to fully complete.
-                        </p>
-                    </div>
-                    {/* Submit Button */}
-                    <button 
-                        className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300"
-                        type="submit"
-                    >
-                        Create Course
-                    </button>
-                </form>
+                        <button 
+                            type="submit"
+                            className="bg-black text-white p-5 rounded-xl text-xl"
+                            onClick={handleSubmit}
+                        >
+                            Create Course
+                        </button>
+                    </form>
+                </div>
+               
+
             </div>
         </Layout>
     );
