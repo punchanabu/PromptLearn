@@ -26,10 +26,10 @@ const Nav: React.FC = () => {
   };
   return (
     <header className="flex w-full max-w-5xl items-center justify-between text-black mb-10 ">
-      <ul className="text-xl font-bold">
+      <ul className="text-xl font-bold flex items-center justify-center">
         <Link href = "/">PromptLearn</Link>
       </ul>
-      <ul className="flex space-x-4 font-mono">
+      <ul className="flex space-x-4 font-mono items-center justify-center">
         <li className="relative group">
           <Link
             href="/courses"
